@@ -14,6 +14,9 @@
 
 using namespace std;
 
+
+//will change \\
+
 //vector <string> StringVector;
 //vector <string> StringVectorFirstLine;
 //vector <string> StringVectorSecondLine;
@@ -92,6 +95,9 @@ void ThreadFunc(string FileName)
 	while (getline(inFile, line)) {
 		stringstream ss(line);
 		cout << line << endl;
+		
+		//will change\\
+		
 		/*StringVector.push_back(line);
 		counterForStringVectorIndex++;
 		string token;
@@ -127,6 +133,9 @@ void ThreadFunc(string FileName)
 		}*/
 
 	}
+	
+	//will change\\
+	
 	//counterForReadLines++;
 }
 
