@@ -1,0 +1,2 @@
+FolderPath: D:\TXTFiles\
+Extension: txt
