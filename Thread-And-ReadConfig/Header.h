@@ -14,21 +14,21 @@
 
 using namespace std;
 
-vector <string> StringVector;
-vector <string> StringVectorFirstLine;
-vector <string> StringVectorSecondLine;
-vector <string> StringVectorThirdLine;
-vector <string> StringVectorForthLine;
+//vector <string> StringVector;
+//vector <string> StringVectorFirstLine;
+//vector <string> StringVectorSecondLine;
+//vector <string> StringVectorThirdLine;
+//vector <string> StringVectorForthLine;
 
-vector <double> DoubleVector;
-
-int counterForDoubleVectorIndex = -1;   // Negative Number. Because of index starts with 0.
-int counterForStringVectorIndex = -1;   // Negative Number. Because of index starts with 0.
-int counterForReadLines;
-int counterForStringVectorFirstLineIndex;
-int counterForStringVectorSecondLineIndex;
-int counterForStringVectorThirdLineIndex;
-int counterForStringVectorForthLineIndex;
+//vector <double> DoubleVector;
+//
+//int counterForDoubleVectorIndex = -1;   // Negative Number. Because of index starts with 0.
+//int counterForStringVectorIndex = -1;   // Negative Number. Because of index starts with 0.
+//int counterForReadLines;
+//int counterForStringVectorFirstLineIndex;
+//int counterForStringVectorSecondLineIndex;
+//int counterForStringVectorThirdLineIndex;
+//int counterForStringVectorForthLineIndex;
 
 
 string FolderPath;
@@ -91,7 +91,8 @@ void ThreadFunc(string FileName)
 	ifstream inFile(FileName);
 	while (getline(inFile, line)) {
 		stringstream ss(line);
-		StringVector.push_back(line);
+		cout << line << endl;
+		/*StringVector.push_back(line);
 		counterForStringVectorIndex++;
 		string token;
 		vector <string> TempStringVector;
@@ -123,10 +124,10 @@ void ThreadFunc(string FileName)
 		{
 			StringVectorForthLine.push_back(StringVector[counterForStringVectorIndex]);
 			counterForStringVectorForthLineIndex++;
-		}
+		}*/
 
 	}
-	counterForReadLines++;
+	//counterForReadLines++;
 }
 
 

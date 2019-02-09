@@ -18,7 +18,9 @@ int main(void) {
 		t0.join();
 	}
 
-	if (counterForReadLines == FilesList.size())
+
+	// This Part will Change
+	/*if (counterForReadLines == FilesList.size())
 	{
 		for (int i = 0; i < counterForStringVectorFirstLineIndex; i++)
 		{
@@ -36,7 +38,7 @@ int main(void) {
 		{
 			cout << StringVectorForthLine[i] << endl;
 		}
-	}
+	}*/
 
 	getchar();
 }
