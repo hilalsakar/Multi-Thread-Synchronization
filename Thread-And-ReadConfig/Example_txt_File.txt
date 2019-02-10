@@ -1,5 +1,0 @@
-1. Line from data_file_0
-2. Line from data_file_0
-3. Line from_data_file_0
-4. Line from_data_file_0
-5. # Lines start with number and '.'
