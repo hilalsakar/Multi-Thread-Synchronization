@@ -14,26 +14,6 @@
 
 using namespace std;
 
-
-//will change \\
-
-//vector <string> StringVector;
-//vector <string> StringVectorFirstLine;
-//vector <string> StringVectorSecondLine;
-//vector <string> StringVectorThirdLine;
-//vector <string> StringVectorForthLine;
-
-//vector <double> DoubleVector;
-//
-//int counterForDoubleVectorIndex = -1;   // Negative Number. Because of index starts with 0.
-//int counterForStringVectorIndex = -1;   // Negative Number. Because of index starts with 0.
-//int counterForReadLines;
-//int counterForStringVectorFirstLineIndex;
-//int counterForStringVectorSecondLineIndex;
-//int counterForStringVectorThirdLineIndex;
-//int counterForStringVectorForthLineIndex;
-
-
 string FolderPath;
 string Extension;
 
@@ -86,57 +66,30 @@ vector <string> FileNamesInFolder(string FolderPath, string Extension)  //Using 
 	return Names;
 }
 
-
-
-void ThreadFunc(string FileName)
+void ThreadFunction(vector <string> FileList)
 {
+	vector <ifstream> fin(FileList.size());
 	string line;
-	ifstream inFile(FileName);
-	while (getline(inFile, line)) {
-		stringstream ss(line);
-		cout << line << endl;
-		
-		//will change\\
-		
-		/*StringVector.push_back(line);
-		counterForStringVectorIndex++;
-		string token;
-		vector <string> TempStringVector;
-		while (getline(ss, token, '.'))
-		{
-			TempStringVector.push_back(token);
-			if (TempStringVector.size() % 2 == 1 )
-			{
-				DoubleVector.push_back(stod(TempStringVector[0]));
-				counterForDoubleVectorIndex++;
-			}
-		}
-		if (DoubleVector[counterForDoubleVectorIndex] == 1)
-		{
-			StringVectorFirstLine.push_back(StringVector[counterForStringVectorIndex]);
-			counterForStringVectorFirstLineIndex++;
-		}
-		else if (DoubleVector[counterForDoubleVectorIndex] == 2)
-		{
-			StringVectorSecondLine.push_back(StringVector[counterForStringVectorIndex]);
-			counterForStringVectorSecondLineIndex++;
-		}
-		else if (DoubleVector[counterForDoubleVectorIndex] == 3)
-		{
-			StringVectorThirdLine.push_back(StringVector[counterForStringVectorIndex]);
-			counterForStringVectorThirdLineIndex++;
-		}
-		else if (DoubleVector[counterForDoubleVectorIndex] == 4)
-		{
-			StringVectorForthLine.push_back(StringVector[counterForStringVectorIndex]);
-			counterForStringVectorForthLineIndex++;
-		}*/
-
+	for (int i = 0; i < fin.size(); i++)
+	{
+		fin[i].open(FileList[i]);		//Files open.
 	}
 	
-	//will change\\
-	
-	//counterForReadLines++;
+	for (int i = 0; true ; )
+	{
+		if (fin[i].is_open())
+		{
+			while (getline(fin[i],line))
+			{
+				cout << line << endl;
+				i++;							// to read one line in each loop.
+				if ( i == FileList.size() )
+				{
+					i = 0;						// to turn back first file for other line.
+				}
+			}
+		}
+	}
 }
 
 

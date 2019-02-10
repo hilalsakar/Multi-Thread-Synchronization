@@ -12,34 +12,8 @@ int main(void) {
 		FilesList[i].insert(0, FolderPath); // Add folder path to file name.
 	}
 
-	for (int i = 0; i < FilesList.size(); i++)
-	{
-		thread t0(ThreadFunc, FilesList[i]);  // Call line of files
-		t0.join();
-	}
-
-
-	// This Part will Change \\
-	
-	/*if (counterForReadLines == FilesList.size())
-	{
-		for (int i = 0; i < counterForStringVectorFirstLineIndex; i++)
-		{
-			cout << StringVectorFirstLine[i] << endl;
-		}
-		for (int i = 0; i < counterForStringVectorSecondLineIndex; i++)
-		{
-			cout << StringVectorSecondLine[i] << endl;
-		}
-		for (int i = 0; i < counterForStringVectorThirdLineIndex; i++)
-		{
-			cout << StringVectorThirdLine[i] << endl;
-		}
-		for (int i = 0; i < counterForStringVectorForthLineIndex; i++)
-		{
-			cout << StringVectorForthLine[i] << endl;
-		}
-	}*/
+	thread thread1(ThreadFunction, FilesList);
+	thread1.join();
 
 	getchar();
 }
