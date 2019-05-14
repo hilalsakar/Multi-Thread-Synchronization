@@ -14,6 +14,6 @@ int main(void) {
 
 	thread thread1(ThreadFunction, FilesList);
 	thread1.join();
-
+	cout << "***end***";
 	getchar();
 }

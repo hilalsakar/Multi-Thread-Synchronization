@@ -89,6 +89,7 @@ void ThreadFunction(vector <string> FileList)
 				}
 			}
 		}
+		break;
 	}
 }
 
